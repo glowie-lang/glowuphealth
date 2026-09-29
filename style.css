@@ -989,10 +989,10 @@ body.cozy .site-header {
 
 @keyframes afyaFloat {
     0%, 100% {
-        transform: translateY(0) rotate(0deg);
+        transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-12px) rotate(1deg);
+        transform: translateY(-12px);
     }
 }
