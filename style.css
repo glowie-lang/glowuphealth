@@ -973,3 +973,26 @@ body.cozy .site-header {
     top: -25px;
   }
 }
+
+.afya-hero {
+    width: min(430px, 90%);
+    margin: 0 auto;
+    animation: afyaFloat 4s ease-in-out infinite;
+}
+
+.afya-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 18px 20px rgba(35, 90, 50, 0.15));
+}
+
+@keyframes afyaFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(1deg);
+    }
+}
