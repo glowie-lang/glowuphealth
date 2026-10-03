@@ -177,168 +177,13 @@
        AFYA
     ========================== */
 
-    .afya-area {
-      min-height: 390px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .afya-circle {
-      width: 350px;
-      height: 350px;
-      background: #e8f0d7;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .afya {
-      width: 180px;
-      height: 230px;
-      position: relative;
-    }
-
-    .leaf-head {
-      width: 135px;
-      height: 165px;
-      background: #78a968;
-      border-radius: 70% 25% 65% 35%;
-      transform: rotate(12deg);
-      position: absolute;
-      top: 5px;
-      left: 25px;
-      border: 4px solid #4d8057;
-    }
-
-    .leaf-head::after {
-      content: "";
-      position: absolute;
-      width: 4px;
-      height: 125px;
-      background: #4d8057;
-      transform: rotate(-10deg);
-      left: 65px;
-      top: 20px;
-      opacity: 0.7;
-    }
-
-    .eye {
-      width: 9px;
-      height: 12px;
-      background: #234c3b;
-      border-radius: 50%;
-      position: absolute;
-      top: 70px;
-      z-index: 2;
-    }
-
-    .eye.left {
-      left: 58px;
-    }
-
-    .eye.right {
-      left: 97px;
-    }
-
-    .smile {
-      position: absolute;
-      width: 30px;
-      height: 15px;
-      border-bottom: 3px solid #234c3b;
-      border-radius: 50%;
-      left: 67px;
-      top: 91px;
-      z-index: 2;
-    }
-
-    .blush {
-      width: 14px;
-      height: 7px;
-      background: #e8a89a;
-      border-radius: 50%;
-      position: absolute;
-      top: 92px;
-      z-index: 2;
-    }
-
-    .blush.left {
-      left: 43px;
-    }
-
-    .blush.right {
-      left: 106px;
-    }
-
-    .body {
-      position: absolute;
-      width: 105px;
-      height: 80px;
-      background: #f7f5e9;
-      border: 4px solid #4d8057;
-      border-radius: 45px 45px 20px 20px;
-      bottom: 0;
-      left: 38px;
-    }
-
-    .stethoscope {
-      position: absolute;
-      width: 45px;
-      height: 55px;
-      border: 4px solid #7b9c9a;
-      border-top: none;
-      border-radius: 0 0 30px 30px;
-      bottom: 12px;
-      left: 66px;
-      z-index: 3;
-    }
-
-    .stethoscope::after {
-      content: "♥";
-      position: absolute;
-      bottom: -12px;
-      right: -12px;
-      color: #6f9690;
-      font-size: 19px;
-    }
-
-    .arm {
-      position: absolute;
-      width: 55px;
-      height: 15px;
-      background: #78a968;
-      border: 3px solid #4d8057;
-      border-radius: 20px;
-      right: -8px;
-      bottom: 53px;
-      transform: rotate(-45deg);
-    }
-
-    .sparkle {
-      position: absolute;
-      color: #e7bd46;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .sparkle.one {
-      top: 35px;
-      right: 35px;
-    }
-
-    .sparkle.two {
-      top: 110px;
-      left: 5px;
-    }
-
-    .sparkle.three {
-      bottom: 35px;
-      right: 5px;
-    }
-
+    .afya-image {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
 
     /* =========================
        SECTION TITLES
@@ -647,35 +492,19 @@
 
         <!-- Afya -->
 
-        <div class="afya-area">
+       <div class="afya-circle">
 
-          <div class="afya-circle">
+  <div class="sparkle one">✦</div>
+  <div class="sparkle two">✦</div>
+  <div class="sparkle three">✦</div>
 
-            <div class="sparkle one">✦</div>
-            <div class="sparkle two">✦</div>
-            <div class="sparkle three">✦</div>
+  <img 
+    src="images/Afya Mascot 2.png" 
+    alt="Afya, the Glow Up Health mascot"
+    class="afya-image"
+  >
 
-            <div class="afya">
-
-              <div class="leaf-head">
-
-                <div class="eye left"></div>
-                <div class="eye right"></div>
-
-                <div class="blush left"></div>
-                <div class="blush right"></div>
-
-                <div class="smile"></div>
-
-              </div>
-
-              <div class="body"></div>
-
-              <div class="stethoscope"></div>
-
-              <div class="arm"></div>
-
-            </div>
+</div>
 
           </div>
 
