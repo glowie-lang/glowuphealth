@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Glow Up Health | Glow Up, Level Up.</title>
+
+  <style>
+    /* =========================
+       GENERAL
+    ========================== */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fdfbf2;
+      color: #234c3b;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    header {
+      background: #fdfbf2;
+      border-bottom: 1px solid #e5eadb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #286044;
+    }
+
+    .logo-leaf {
+      font-size: 25px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #76a96e;
+    }
+
+    .menu-button {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 27px;
+      color: #286044;
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 85% 25%, #e9f1d9 0 120px, transparent 121px),
+        #fdfbf2;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(48px, 6vw, 76px);
+      line-height: 0.98;
+      color: #286044;
+      margin-bottom: 25px;
+      font-weight: 800;
+    }
+
+    .hero-text h1 span {
+      color: #7da96f;
+    }
+
+    .hero-text p {
+      max-width: 550px;
+      font-size: 18px;
+      color: #52665a;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: #3d7655;
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #2f6045;
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      border: 2px solid #3d7655;
+      color: #3d7655;
+      background: #fffef8;
+    }
+
+    .button-secondary:hover {
+      background: #eaf2df;
+    }
+
+
+    /* =========================
+       AFYA
+    ========================== */
+
+    .afya-area {
+      min-height: 390px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .afya-circle {
+      width: 350px;
+      height: 350px;
+      background: #e8f0d7;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .afya {
+      width: 180px;
+      height: 230px;
+      position: relative;
+    }
+
+    .leaf-head {
+      width: 135px;
+      height: 165px;
+      background: #78a968;
+      border-radius: 70% 25% 65% 35%;
+      transform: rotate(12deg);
+      position: absolute;
+      top: 5px;
+      left: 25px;
+      border: 4px solid #4d8057;
+    }
+
+    .leaf-head::after {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 125px;
+      background: #4d8057;
+      transform: rotate(-10deg);
+      left: 65px;
+      top: 20px;
+      opacity: 0.7;
+    }
+
+    .eye {
+      width: 9px;
+      height: 12px;
+      background: #234c3b;
+      border-radius: 50%;
+      position: absolute;
+      top: 70px;
+      z-index: 2;
+    }
+
+    .eye.left {
+      left: 58px;
+    }
+
+    .eye.right {
+      left: 97px;
+    }
+
+    .smile {
+      position: absolute;
+      width: 30px;
+      height: 15px;
+      border-bottom: 3px solid #234c3b;
+      border-radius: 50%;
+      left: 67px;
+      top: 91px;
+      z-index: 2;
+    }
+
+    .blush {
+      width: 14px;
+      height: 7px;
+      background: #e8a89a;
+      border-radius: 50%;
+      position: absolute;
+      top: 92px;
+      z-index: 2;
+    }
+
+    .blush.left {
+      left: 43px;
+    }
+
+    .blush.right {
+      left: 106px;
+    }
+
+    .body {
+      position: absolute;
+      width: 105px;
+      height: 80px;
+      background: #f7f5e9;
+      border: 4px solid #4d8057;
+      border-radius: 45px 45px 20px 20px;
+      bottom: 0;
+      left: 38px;
+    }
+
+    .stethoscope {
+      position: absolute;
+      width: 45px;
+      height: 55px;
+      border: 4px solid #7b9c9a;
+      border-top: none;
+      border-radius: 0 0 30px 30px;
+      bottom: 12px;
+      left: 66px;
+      z-index: 3;
+    }
+
+    .stethoscope::after {
+      content: "♥";
+      position: absolute;
+      bottom: -12px;
+      right: -12px;
+      color: #6f9690;
+      font-size: 19px;
+    }
+
+    .arm {
+      position: absolute;
+      width: 55px;
+      height: 15px;
+      background: #78a968;
+      border: 3px solid #4d8057;
+      border-radius: 20px;
+      right: -8px;
+      bottom: 53px;
+      transform: rotate(-45deg);
+    }
+
+    .sparkle {
+      position: absolute;
+      color: #e7bd46;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .sparkle.one {
+      top: 35px;
+      right: 35px;
+    }
+
+    .sparkle.two {
+      top: 110px;
+      left: 5px;
+    }
+
+    .sparkle.three {
+      bottom: 35px;
+      right: 5px;
+    }
+
+
+    /* =========================
+       SECTION TITLES
+    ========================== */
+
+    .section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 32px;
+      color: #234c3b;
+      margin-bottom: 25px;
+    }
+
+
+    /* =========================
+       OUR FOCUS
+    ========================== */
+
+    .focus {
+      background: #f4f7e9;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .focus-card {
+      background: #fffef8;
+      padding: 30px 22px;
+      border-radius: 16px;
+      text-align: center;
+      border: 1px solid #e3ead5;
+      transition: 0.2s ease;
+    }
+
+    .focus-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .focus-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .focus-card h3 {
+      color: #286044;
+      margin-bottom: 8px;
+      font-size: 19px;
+    }
+
+    .focus-card p {
+      color: #65756a;
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       WHAT'S NEW
+    ========================== */
+
+    .new-section {
+      background: #fdfbf2;
+    }
+
+    .new-card {
+      background: #eaf2dc;
+      border-radius: 20px;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .snail-box {
+      background: #fffef8;
+      height: 150px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+    }
+
+    .new-card h3 {
+      font-size: 24px;
+      color: #286044;
+      margin-bottom: 10px;
+    }
+
+    .new-card p {
+      color: #5d6f62;
+      margin-bottom: 15px;
+    }
+
+    .read-more {
+      color: #3d7655;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       FINAL CTA
+    ========================== */
+
+    .cta {
+      padding: 70px 0;
+      background: #e8f0d7;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 34px;
+      color: #286044;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: #5b6c60;
+      max-width: 550px;
+      margin: 0 auto 25px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #fdfbf2;
+      border-top: 1px solid #e3ead5;
+      padding: 30px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-text {
+      color: #6c786e;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      color: #3d7655;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 800px) {
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: #fdfbf2;
+        padding: 20px;
+        flex-direction: column;
+        border-bottom: 1px solid #e3ead5;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .afya-area {
+        min-height: 330px;
+      }
+
+      .afya-circle {
+        width: 280px;
+        height: 280px;
+      }
+
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .new-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .snail-box {
+        height: 130px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <header>
+    <div class="container">
+
+      <nav>
+
+        <a href="index.html" class="logo">
+          <span class="logo-leaf">🌱</span>
+          Glow Up Health
+        </a>
+
+        <button class="menu-button" onclick="toggleMenu()">
+          ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Blogs</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="container hero-content">
+
+        <div class="hero-text">
+
+          <h1>
+            Glow Up,<br>
+            <span>Level Up.</span>
+          </h1>
+
+          <p>
+            Helping kids and teens understand their mental,
+            physical and emotional health — one small step
+            at a time.
+          </p>
+
+          <div class="buttons">
+
+            <a href="resources.html" class="button button-primary">
+              Explore Resources
+            </a>
+
+            <a href="get-involved.html" class="button button-secondary">
+              Get Involved
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- Afya -->
+
+        <div class="afya-area">
+
+          <div class="afya-circle">
+
+            <div class="sparkle one">✦</div>
+            <div class="sparkle two">✦</div>
+            <div class="sparkle three">✦</div>
+
+            <div class="afya">
+
+              <div class="leaf-head">
+
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+
+                <div class="blush left"></div>
+                <div class="blush right"></div>
+
+                <div class="smile"></div>
+
+              </div>
+
+              <div class="body"></div>
+
+              <div class="stethoscope"></div>
+
+              <div class="arm"></div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         OUR FOCUS
+    ========================== -->
+
+    <section class="section focus">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          Our Focus
+        </h2>
+
+        <div class="focus-grid">
+
+          <div class="focus-card">
+
+            <div class="focus-icon">🧠</div>
+
+            <h3>Mental Health</h3>
+
+            <p>
+              Understanding emotions, stress,
+              self-care and wellbeing.
+            </p>
+
+          </div>
+
+
+          <div class="focus-card">
+
+            <div class="focus-icon">💧</div>
+
+            <h3>Healthy Habits</h3>
+
+            <p>
+              Simple hygiene, nutrition,
+              hydration and everyday health tips.
+            </p>
+
+          </div>
+
+
+          <div class="focus-card">
+
+            <div class="focus-icon">💚</div>
+
+            <h3>Health Awareness</h3>
+
+            <p>
+              Making health information easier
+              for young people to understand.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         WHAT'S NEW
+    ========================== -->
+
+    <section class="section new-section">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          What's New?
+        </h2>
+
+        <div class="new-card">
+
+          <div class="snail-box">
+            🐌
+          </div>
+
+          <div>
+
+            <h3>
+              Hydration Police: Why Water Matters
+            </h3>
+
+            <p>
+              Meet our little snail officer and learn
+              why staying hydrated is so important!
+            </p>
+
+            <a href="blog.html" class="read-more">
+              Read More →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FINAL CTA
+    ========================== -->
+
+    <section class="cta">
+
+      <div class="container">
+
+        <h2>
+          Ready to glow up?
+        </h2>
+
+        <p>
+          Learn something new, take care of yourself,
+          and help someone else do the same.
+        </p>
+
+        <a href="resources.html" class="button button-primary">
+          Explore Glow Up Health
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <div class="logo">
+        <span class="logo-leaf">🌱</span>
+        Glow Up Health
+      </div>
+
+      <p class="footer-text">
+        © 2026 Glow Up Health. Glow Up, Level Up.
+      </p>
+
+      <div class="footer-links">
+        <a href="blog.html">Blogs</a>
+        <a href="resources.html">Resources</a>
+        <a href="get-involved.html">Get Involved</a>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =========================
+       MOBILE MENU
+  ========================== -->
+
+  <script>
+
+    function toggleMenu() {
+
+      const menu = document.getElementById("navLinks");
+
+      menu.classList.toggle("active");
+
+    }
+
+  </script>
+
+</body>
+</html>
